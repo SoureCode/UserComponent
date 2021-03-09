@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<psalm
+        errorLevel="3"
+        resolveFromConfigFile="true"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <directory name="src"/>
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+    <issueHandlers>
+        <InvalidNullableReturnType>
+            <errorLevel type="suppress">
+                <!--
+                @todo Ignore the nullable return type of getUsername
+                      Can not be suppressed on place cause of Psalm requires
+                      double * comments to suppress and this is not allowed
+                      by PHP-CS-Fixer and PHP-CS-Fixer doesn't have and ignore
+                      annotation at all. https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4512
+                 -->
+                <file name="src/Model/Basic/BasicUser.php"/>
+            </errorLevel>
+        </InvalidNullableReturnType>
+        <NullableReturnStatement>
+            <errorLevel type="suppress">
+                <!--
+                @todo Ignore the nullable return type of getUsername
+                      Can not be suppressed on place cause of Psalm requires
+                      double * comments to suppress and this is not allowed
+                      by PHP-CS-Fixer and PHP-CS-Fixer doesn't have and ignore
+                      annotation at all. https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4512
+                 -->
+                <file name="src/Model/Basic/BasicUser.php"/>
+            </errorLevel>
+        </NullableReturnStatement>
+    </issueHandlers>
+</psalm>
